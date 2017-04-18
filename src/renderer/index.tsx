@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import { connect, Provider } from 'react-redux'
 
 interface State {
@@ -9,26 +9,23 @@ interface State {
 
 interface Action {
     type: string
-    paylod?: any
+    payload?: any
 }
 
-const count = (count: number, action: Action) => {
+const initialState: State = { count: 0 }
+
+const count = (count: number = initialState.count, action: Action) => {
     switch (action.type) {
         case 'COUNT:UP':
-            return count + 1;
+            return count + 1
         case 'COUNT:DOWN':
-            return count - 1;
+            return count - 1
         default:
-            return count;
+            return count
     }
 }
 
-const initialState: State = { count: 0 };
-const store = createStore((state: State = initialState, action: Action) => {
-    return {
-        count: count(state.count, action)
-    }
-});
+const store = createStore(combineReducers({ count }))
 
 const countUp = () => ({ type: 'COUNT:UP' })
 const countDown = () => ({ type: 'COUNT:DOWN' })
