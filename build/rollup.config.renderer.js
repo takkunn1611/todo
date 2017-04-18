@@ -17,7 +17,7 @@ export default {
         }),
         commonjs({
             namedExports: {
-                'node_modules/react/react.js': [ 'createElement' ],
+                'node_modules/react/react.js': [ 'createElement', 'Children', 'Component' ],
                 'node_modules/react-dom/index.js': [ 'render' ]
             }
         })
