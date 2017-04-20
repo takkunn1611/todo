@@ -1,4 +1,4 @@
-import { Action } from './action'
+import { Action } from 'redux';
 
 export const COUNT_UP: Action = { type: 'COUNT:UP' };
 export const COUNT_DOWN: Action = { type: 'COUNT:DOWN' };

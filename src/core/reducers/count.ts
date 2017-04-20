@@ -1,5 +1,5 @@
+import { Action } from 'redux';
 import { initialState } from '../state'
-import { Action } from '../actions/action'
 import { COUNT_UP, COUNT_DOWN } from '../actions/count'
 
 export const count = (count: number = initialState.count, action: Action) => {
