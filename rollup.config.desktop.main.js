@@ -3,8 +3,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import tsc from 'typescript'
 
 export default {
-    entry: 'src/main/index.ts',
-    dest: 'dist/main.js',
+    entry: 'src/desktop/main/index.ts',
+    dest: 'dist/desktop/main.js',
     format: 'cjs',
     plugins: [
         typescript({

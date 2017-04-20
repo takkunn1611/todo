@@ -1,32 +1,38 @@
 {
   "name": "todo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/main.js",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "build:main": "rollup -c build/rollup.config.main.js",
-    "build:renderer": "rollup -c build/rollup.config.renderer.js",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "build:desktop:main": "rollup -c rollup.config.desktop.main.js",
+    "build:desktop:renderer": "rollup -c rollup.config.desktop.renderer.js",
+    "build:desktop": "npm-run-all --parallel build:desktop:*",
     "watch:main": "npm run build:main -- -w",
     "watch:renderer": "npm run build:renderer -- -w",
     "build": "npm-run-all --parallel build:*",
     "watch": "npm-run-all --parallel watch:*",
-    "start": "electron ."
+    "start:desktop": "electron dist/desktop/main.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native": "^0.43.3"
+  },
   "devDependencies": {
     "@types/electron": "^1.4.35",
     "@types/node": "^7.0.12",
     "@types/react": "^15.0.21",
     "@types/react-dom": "^0.14.23",
+    "@types/react-native": "^0.43.4",
     "@types/react-redux": "^4.4.38",
     "@types/redux": "^3.6.0",
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
     "electron": "^1.6.2",
+    "jest": "19.0.2",
     "npm-run-all": "^4.0.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
+    "react-test-renderer": "16.0.0-alpha.6",
     "redux": "^3.6.0",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "^8.0.2",
@@ -35,5 +41,8 @@
     "rollup-plugin-typescript": "^0.8.1",
     "rollup-watch": "^3.2.2",
     "typescript": "^2.2.2"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

@@ -5,8 +5,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import tsc from 'typescript'
 
 export default {
-    entry: 'src/renderer/index.tsx',
-    dest: 'dist/renderer.js',
+    entry: 'src/desktop/renderer/index.tsx',
+    dest: 'dist/desktop/renderer.js',
     format: 'cjs',
     plugins: [
         typescript({
