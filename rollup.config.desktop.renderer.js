@@ -1,17 +1,12 @@
-import typescript from 'rollup-plugin-typescript';
 import resolve from 'rollup-plugin-node-resolve';
 import env from 'rollup-plugin-env';
 import commonjs from 'rollup-plugin-commonjs';
-import tsc from 'typescript'
 
 export default {
-    entry: 'src/desktop/renderer/index.tsx',
+    entry: 'dist/desktop/renderer/index.js',
     dest: 'dist/desktop/renderer.js',
     format: 'cjs',
     plugins: [
-        typescript({
-            typescript: tsc
-        }),
         resolve({
             jsnext: true,
             main: true
