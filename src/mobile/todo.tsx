@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -7,12 +7,8 @@ import { CounterContainer } from './containers/CounterContainer'
 
 const store = createStore(reducer)
 
-export default class todo extends Component<{}, {}> {
-    render() {
-        return (
-            <Provider store={store}>
-                <CounterContainer />
-            </Provider>
-        )
-    }
-}
+export default () => (
+    <Provider store={store}>
+        <CounterContainer />
+    </Provider>
+)
