@@ -1,9 +1,10 @@
-import * as React from 'react'
+import React from 'react'
+import Button from './Button'
 
-export const Counter = (props: any) => (
+export default (props: any) => (
     <div>
         <div>count: { props.count }</div>
-        <button onClick={ props.plus }>+</button>
-        <button onClick={ props.minus }>-</button>
+        <Button onClick={ props.plus }>+</Button>
+        <Button onClick={ props.minus }>-</Button>
     </div>
 )

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import { State } from '../../../core/state'
-import { Counter } from '../components/Counter'
+import Counter from '../components/Counter'
 import { up, down } from '../../../core/actions/count'
 
-export const CounterContainer = connect(
+export default connect(
     (state: State) => ({
         count: state.count
     }),
